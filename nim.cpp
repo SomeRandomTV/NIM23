@@ -9,14 +9,14 @@ using namespace std;
 class NimGame{    
 public:
     NimGame();                                  
-    void setPlayerName(string playerName);        
-    void setPlayerMove(int playerSticks);      
-    void setSticks(int amtSticks);         
-    string getName();                       
-    int getPlayerSticks();                  
-    int getTotalSticks();                   
-    void whoWon(string name, bool player);
-    void PlayAgain(char continue);
+    void setPlayerName(string playerName);        // sets the players name        
+    void setPlayerMove(int playerSticks);         // takes the players move
+    void setSticks(int amtSticks);                // sets the game sticks
+    string getName();                             // returns the player's name
+    int getPlayerSticks();                        // returns the amt of the sticks the player drew
+    int getTotalSticks();                         // returns the total amt of sticks taken
+    void whoWon(string name, bool player);        // sets game winner
+    void PlayAgain(char continue);               
     void Print();
 
 
@@ -30,7 +30,7 @@ private:
 
 };
 
-bool gameEnd = false;
+bool gameEnd = false;    // global variable
 
 NimGame::NimGame() {                                // Default Constructor
     name = "NoName";
@@ -94,7 +94,13 @@ int main() {
     int sticksTaken;
     bool playerWon;
     char userInput;
-    userInput = 'y';
+    court << "Would you like to play NIM: ";
+    cin >> userInput;
+    if (userInput == 'y') {
+        continue;        // start the game
+    else {
+        return 0;        // exit the program
+    }
 
     cout << "Welcome to!\n";
     Sleep(2000);
